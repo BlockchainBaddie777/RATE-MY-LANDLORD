@@ -164,3 +164,100 @@ textarea {
 .stars span {
   animation: starsAnimation 3s infinite;
 }
+/* Cosmic Background with Galaxy Image */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: url('https://source.unsplash.com/1600x900/?galaxy,nebula,stars') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  animation: backgroundGlow 5s infinite alternate;
+}
+
+/* Glowing effect for the background */
+@keyframes backgroundGlow {
+  0% { background: url('https://source.unsplash.com/1600x900/?universe,stars,galaxy') no-repeat center center fixed; }
+  50% { background: url('https://source.unsplash.com/1600x900/?nebula,stars,galaxy') no-repeat center center fixed; }
+  100% { background: url('https://source.unsplash.com/1600x900/?cosmos,nebula,space') no-repeat center center fixed; }
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark overlay */
+  border-radius: 15px;
+  padding: 30px;
+  width: 80%;
+  max-width: 900px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+h1, h2 {
+  text-align: center;
+  color: #fff;
+}
+
+form input, .comment-section textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button, .comment-section button {
+  background-color: #4b0082;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+form button:hover, .comment-section button:hover {
+  background-color: #7a00ff;
+}
+
+.landlord-section {
+  margin-top: 40px;
+}
+
+.landlord-list {
+  margin-top: 20px;
+}
+
+.landlord-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.landlord-list li {
+  background-color: #f1f1f1;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landlord-list li button {
+  background-color: #ff4b5c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.landlord-list li button:hover {
+  background-color: #e63542;
+}
