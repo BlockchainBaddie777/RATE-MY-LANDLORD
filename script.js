@@ -30,7 +30,7 @@ function updateStars() {
 // Submit rating when button is clicked
 submitButton.addEventListener('click', () => {
   if (selectedRating === 0) {
-    alert('Please select a rating!');
+    alert('Please select a rating! 🚀');
     return;
   }
 
