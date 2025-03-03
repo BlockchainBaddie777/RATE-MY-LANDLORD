@@ -73,3 +73,58 @@ submitCommentButton.addEventListener('click', () => {
   // Clear the comment box
   commentBox.value = "";
 });
+// Landlord Data Logic
+
+const addLandlordForm = document.getElementById("add-landlord-form");
+const landlordNameInput = document.getElementById("landlord-name");
+const landlordPhoneInput = document.getElementById("landlord-phone");
+const landlordEmailInput = document.getElementById("landlord-email");
+const landlordPropertyInput = document.getElementById("landlord-property");
+const landlordList = document.getElementById("landlord-list");
+
+let landlords = [];
+
+addLandlordForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = landlordNameInput.value;
+  const phone = landlordPhoneInput.value;
+  const email = landlordEmailInput.value;
+  const property = landlordPropertyInput.value;
+
+  const newLandlord = {
+    name,
+    phone,
+    email,
+    property,
+  };
+
+  landlords.push(newLandlord);
+  renderLandlords();
+  landlordNameInput.value = "";
+  landlordPhoneInput.value = "";
+  landlordEmailInput.value = "";
+  landlordPropertyInput.value = "";
+});
+
+function renderLandlords() {
+  landlordList.innerHTML = "";
+  landlords.forEach((landlord, index) => {
+    const listItem = document.createElement("li");
+    listItem.innerHTML = `
+      <div>
+        <strong>${landlord.name}</strong><br>
+        Phone: ${landlord.phone}<br>
+        Email: ${landlord.email}<br>
+        Property: ${landlord.property}
+      </div>
+      <button onclick="deleteLandlord(${index})">Delete</button>
+    `;
+    landlordList.appendChild(listItem);
+  });
+}
+
+function deleteLandlord(index) {
+  landlords.splice(index, 1);
+  renderLandlords();
+}
