@@ -50,3 +50,26 @@ submitButton.addEventListener('click', () => {
   selectedRating = 0;
   updateStars();
 });
+
+// Comment submission
+submitCommentButton.addEventListener('click', () => {
+  const commentText = commentBox.value.trim();
+
+  if (commentText === "") {
+    alert("Help Out Your Fellow New Yorker and Enter a Comment! 💬");
+    return;
+  }
+
+  // Create a new comment
+  const newComment = document.createElement('div');
+  newComment.classList.add('comment');
+  newComment.innerHTML = `
+    <p><span>Comment:</span> ${commentText}</p>
+  `;
+
+  // Append the new comment to the list
+  commentsList.appendChild(newComment);
+
+  // Clear the comment box
+  commentBox.value = "";
+});
