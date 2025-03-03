@@ -261,3 +261,31 @@ form button:hover, .comment-section button:hover {
 .landlord-list li button:hover {
   background-color: #e63542;
 }
+/* Landlord list styles */
+.landlord-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.landlord-list li {
+  background-color: #f1f1f1;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landlord-list .landlord-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+/* Form Container */
+.form-container {
+  margin-bottom: 20px;
+}
