@@ -109,3 +109,36 @@
   <script src="script.js"></script>
 </body>
 </html>
+ <!-- Landlord Data Section -->
+    <div class="landlord-section">
+      <h1>🏠 Landlord Information</h1>
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab-button active" id="tab-list">Landlord Directory</button>
+        <button class="tab-button" id="tab-add">Add Landlord</button>
+      </div>
+
+      <!-- Landlord List (Tab 1) -->
+      <div class="tab-content" id="landlord-list">
+        <h2>Landlord Directory</h2>
+        <ul id="landlord-list-ul"></ul>
+      </div>
+
+      <!-- Add Landlord Form (Tab 2) -->
+      <div class="tab-content" id="add-landlord-form-container">
+        <h2>Add New Landlord</h2>
+        <form id="add-landlord-form">
+          <input type="text" id="landlord-name" placeholder="Landlord Name" required />
+          <input type="text" id="landlord-phone" placeholder="Phone Number" required />
+          <input type="email" id="landlord-email" placeholder="Email Address" required />
+          <input type="text" id="landlord-property" placeholder="Property Name" required />
+          <input type="file" id="landlord-photo" accept="image/*" />
+          <button type="submit">Add Landlord</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
