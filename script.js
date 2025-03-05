@@ -155,3 +155,15 @@ addLandlordForm.addEventListener('submit', (e) => {
     window.location.href = 'thank-you.html';
   }
 });
+submitButton.addEventListener("click", () => {
+  if (selectedRating > 0) {
+    totalRatings++;
+    sumRatings += selectedRating;
+    updateRatingInfo();
+    selectedRating = 0;
+    updateStars();
+    
+    // Redirect to Thank You page
+    window.location.href = 'thank-you.html';
+  }
+});
