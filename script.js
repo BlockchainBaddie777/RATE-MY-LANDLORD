@@ -128,3 +128,30 @@ function deleteLandlord(index) {
   landlords.splice(index, 1);
   renderLandlords();
 }
+// Add new landlord
+addLandlordForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  const landlordName = document.getElementById('landlord-name').value;
+  const landlordPhone = document.getElementById('landlord-phone').value;
+  const landlordEmail = document.getElementById('landlord-email').value;
+  const landlordProperty = document.getElementById('landlord-property').value;
+  const landlordPhoto = document.getElementById('landlord-photo').files[0];
+
+  if (landlordName && landlordPhone && landlordEmail && landlordProperty && landlordPhoto) {
+    const landlord = {
+      name: landlordName,
+      phone: landlordPhone,
+      email: landlordEmail,
+      property: landlordProperty,
+      photo: URL.createObjectURL(landlordPhoto)
+    };
+    
+    landlords.push(landlord); // Add landlord to the list
+    displayLandlordList();
+    addLandlordForm.reset(); // Reset the form
+    
+    // Redirect to Thank You page
+    window.location.href = 'thank-you.html';
+  }
+});
