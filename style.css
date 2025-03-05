@@ -289,3 +289,39 @@ form button:hover, .comment-section button:hover {
 .form-container {
   margin-bottom: 20px;
 }
+/* Styling for Thank You page */
+.thank-you-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  padding: 30px;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  margin: 50px auto;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+a {
+  color: #7a00ff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 8px 15px;
+  background-color: #4b0082;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+a:hover {
+  background-color: #7a00ff;
+}
