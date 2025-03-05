@@ -335,3 +335,95 @@ function removeLandlord(index) {
   landlords.splice(index, 1);
   displayLandlordList();
 }
+// Tab Switching Logic
+const tabRatingButton = document.getElementById('tab-rating');
+const tabLandlordDirectoryButton = document.getElementById('tab-landlord-directory');
+const tabAddButton = document.getElementById('tab-add');
+const ratingTab = document.getElementById('rating-tab');
+const landlordDirectoryTab = document.getElementById('landlord-directory-tab');
+const addLandlordTab = document.getElementById('add-landlord-tab');
+
+tabRatingButton.addEventListener('click', () => {
+  setActiveTab(ratingTab, tabRatingButton);
+});
+
+tabLandlordDirectoryButton.addEventListener('click', () => {
+  setActiveTab(landlordDirectoryTab, tabLandlordDirectoryButton);
+});
+
+tabAddButton.addEventListener('click', () => {
+  setActiveTab(addLandlordTab, tabAddButton);
+});
+
+function setActiveTab(tabContent, tabButton) {
+  // Hide all tabs
+  const tabs = document.querySelectorAll('.tab-content');
+  tabs.forEach(tab => tab.classList.remove('active'));
+
+  // Deactivate all buttons
+  const buttons = document.querySelectorAll('.tab-button');
+  buttons.forEach(button => button.classList.remove('active'));
+
+  // Show the clicked tab and activate its button
+  tabContent.classList.add('active');
+  tabButton.classList.add('active');
+}
+
+// Landlord Data
+let landlords = [
+  {
+    name: "The Related Companies",
+    phone: "(212) 801-1000",
+    email: "contact@related.com",
+    property: "Hudson Yards",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Hudson_Yards_%28Manhattan%29_1.jpg"
+  },
+  {
+    name: "Tishman Realty & Construction",
+    phone: "(212) 453-2500",
+    email: "info@tishmanrealty.com",
+    property: "The MetLife Building",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/2/26/MetLife_Building%2C_NYC.jpg"
+  },
+  {
+    name: "Silverstein Properties",
+    phone: "(212) 266-4500",
+    email: "info@silversteinproperties.com",
+    property: "World Trade Center",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/e/e0/One_World_Trade_Center_September_2018.jpg"
+  },
+  {
+    name: "Extell Development Company",
+    phone: "(212) 563-5388",
+    email: "info@extell.com",
+    property: "Central Park Tower",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/a/ae/Central_Park_Tower%2C_New_York_2020.jpg"
+  },
+  {
+    name: "Brookfield Properties",
+    phone: "(212) 417-7000",
+    email: "info@brookfieldproperties.com",
+    property: "Brookfield Place",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Brookfield_Place%2C_New_York.jpg"
+  }
+];
+
+// Display Landlord List
+function displayLandlordList() {
+  const landlordListUl = document.getElementById('landlord-list-ul');
+  landlordListUl.innerHTML = ''; // Clear the list
+  landlords.forEach((landlord) => {
+    const listItem = document.createElement('li');
+    listItem.innerHTML = `
+      <div>
+        <img class="landlord-image" src="${landlord.photo}" alt="${landlord.property}">
+        <p>${landlord.name} (${landlord.property})</p>
+        <p>${landlord.phone} | ${landlord.email}</p>
+      </div>
+    `;
+    landlordListUl.appendChild(listItem);
+  });
+}
+
+// Call the displayLandlordList function when the page loads
+window.onload = displayLandlordList;
